@@ -9,7 +9,7 @@ import MainLayout from './layouts/MainLayout';
 
 const Cart = Loadable({
   loader: () => import(/* webpackChunkName: "Cart" */ './pages/Cart'),
-  loading: () => <div>Идёт загрузка корзины...</div>,
+  loading: () => <div>Кошик завантажується...</div>,
 });
 
 const FullPizza = React.lazy(() => import(/* webpackChunkName: "FullPizza" */ './pages/FullPizza'));
@@ -23,7 +23,7 @@ function App() {
         <Route
           path="cart"
           element={
-            <Suspense fallback={<div>Идёт загрузка корзины...</div>}>
+            <Suspense fallback={<div>Кошик завантажується...</div>}>
               <Cart />
             </Suspense>
           }
@@ -31,7 +31,7 @@ function App() {
         <Route
           path="pizza/:id"
           element={
-            <Suspense fallback={<div>Идёт загрузка...</div>}>
+            <Suspense fallback={<div>Іде завантаження...</div>}>
               <FullPizza />
             </Suspense>
           }
@@ -39,7 +39,7 @@ function App() {
         <Route
           path="*"
           element={
-            <Suspense fallback={<div>Идёт загрузка...</div>}>
+            <Suspense fallback={<div>Іде завантаження...</div>}>
               <NotFound />
             </Suspense>
           }

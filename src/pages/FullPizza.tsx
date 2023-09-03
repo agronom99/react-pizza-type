@@ -19,7 +19,7 @@ const FullPizza: React.FC = () => {
         const { data } = await axios.get('https://6457ce9b0c15cb1482118f8f.mockapi.io/items' + id);
         setPizza(data);
       } catch (error) {
-        alert('Ошибка при получении пиццы!');
+        alert('Помилка отримання піци!');
         navigate('/');
       }
     }
@@ -28,7 +28,7 @@ const FullPizza: React.FC = () => {
   }, []);
 
   if (!pizza) {
-    return <>Загрузка...</>;
+    return <>Завантаження...</>;
   }
 
   return (
@@ -38,7 +38,7 @@ const FullPizza: React.FC = () => {
       <h4>{pizza.price} ₽</h4>
       <Link to="/">
         <button className="button button--outline button--add">
-          <span>Назад</span>
+          <span>назад</span>
         </button>
       </Link>
     </div>
